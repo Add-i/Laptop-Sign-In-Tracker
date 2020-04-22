@@ -8,18 +8,15 @@ body {
   margin: 0;
   min-width: 250px;
 }
-
 /* Include the padding and border in an element's total width and height */
 * {
   box-sizing: border-box;
 }
-
 /* Remove margins and padding from the list */
 ul {
   margin: 0;
   padding: 0;
 }
-
 /* Style the list items */
 ul li {
   cursor: pointer;
@@ -29,31 +26,26 @@ ul li {
   background: #eee;
   font-size: 18px;
   transition: 0.2s;
-
   /* make the list items unselectable */
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
-
 /* Set all odd list items to a different color (zebra-stripes) */
 ul li:nth-child(odd) {
   background: #f9f9f9;
 }
-
 /* Darker background-color on hover */
 ul li:hover {
   background: #ddd;
 }
-
 /* When clicked on, add a background color and strike out text */
 ul li.checked {
   background: #888;
   color: #fff;
   text-decoration: line-through;
 }
-
 /* Add a "checked" mark when clicked on */
 ul li.checked::before {
   content: '';
@@ -67,19 +59,16 @@ ul li.checked::before {
   height: 15px;
   width: 7px;
 }
-
 .close {
   position: absolute;
   right: 0;
   top: 0;
   padding: 12px 16px 12px 16px;
 }
-
 .close:hover {
   background-color: #f44336;
   color: white;
 }
-
 /* Style the header */
 .header {
   background-color: #EEE8AA;
@@ -87,13 +76,11 @@ ul li.checked::before {
   color: white;
   text-align: center;
 }
-
 .header:after {
   content: "";
   display: table;
   clear: both;
 }
-
 input {
   margin: 0;
   border: none;
@@ -117,7 +104,6 @@ input {
   transition: 0.3s;
   border-radius: 0;
 }
-
 .addBtn:hover {
   background-color: #bbb;
 }
@@ -126,8 +112,8 @@ input {
 <body>
 
 <div id="myDIV" class="header">
-  <h2 style="margin:5px">Chargers and Laptops</h2>
-  <input type="text" id="myInput" placeholder="Name...">
+  <h2 style="margin:5px">Chargers and Laptops</h2>  
+<input type="text" id="myInput" placeholder="Name...">
   <span1 onclick="newElement()" ></span1>
   <input type="text" id="myInput" placeholder="Email address...">
   <span2 onclick="newElement()" class="addBtn">Add</span2>
@@ -135,17 +121,15 @@ input {
 
 <ul id="myUL">
   <li>List Names</li>
-
 </ul>
-
 <script>
 var myNodelist = document.getElementsByTagName("LI");
 var i;
-for (i = 0; i < myNodelist.length; i++) {
-  var span1 = document.createElement("SPAN1");
+for (i = 0; i < myNodelist.length; i++) { 
+var span1 = document.createElement("SPAN1");
   var span2 = document.createElement("SPAN2");
-  var txt = document.createTextNode("\u00D7");
-  span1.className = "close";
+  var txt = document.createTextNode("\u00D7"); 
+span1.className = "close";
   span1.appendChild(txt);
   myNodelist[i].appendChild(span1);
   span2.className = "close";
@@ -161,14 +145,12 @@ for (i = 0; i < close.length; i++) {
     div.style.display = "none";
   }
 }
-
 var list = document.querySelector('ul');
 list.addEventListener('click', function(ev) {
   if (ev.target.tagName === 'LI') {
     ev.target.classList.toggle('checked');
   }
 }, false);
-
 function newElement() {
   var li = document.createElement("li");
   var inputValue = document.getElementById("myInput").value;
@@ -179,19 +161,17 @@ function newElement() {
   } else {
     document.getElementById("myUL").appendChild(li);
   }
-  document.getElementById("myInput").value = "";
-
-  var span1 = document.createElement("SPAN");
+  document.getElementById("myInput").value = "";  
+var span1 = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
   span1.className = "close";
   span1.appendChild(txt);
   li.appendChild(span1);
   var span2 = document.createElement("SPAN2");
-  var txt = document.createTextNode("\u00D7");
-  span2.className = "close";
+  var txt = document.createTextNode("\u00D7");  
+span2.className = "close";
   span2.appendChild(txt);
   li.appendChild(span2);
-
   for (i = 0; i < close.length; i++) {
     close[i].onclick = function() {
       var div = this.parentElement;
@@ -200,6 +180,5 @@ function newElement() {
   }
 }
 </script>
-
 </body>
 </html>
